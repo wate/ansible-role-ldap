@@ -1,0 +1,21 @@
+# code: language=ansible
+---
+- name: Install ldap dependency packages
+  ansible.builtin.apt:
+    name: "{{ ldap_dependency_packages | default([]) }}"
+- name: Add ldap group
+  ansible.builtin.group:
+    name: "{{ ldap_group }}"
+    system: true
+- name: Add ldap user
+  ansible.builtin.user:
+    name: "{{ ldap_user }}"
+    group: "{{ ldap_group }}"
+    system: true
+- name: Create install directory
+  ansible.builtin.file:
+    path: "{{ ldap_home }}"
+    owner: "{{ ldap_user }}"
+    group: "{{ ldap_group }}"
+    state: directory
+    mode: "0755"

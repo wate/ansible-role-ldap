@@ -1,0 +1,12 @@
+---
+ldap_dependency_packages: []
+
+# ldap_apt_key_url: https://packages.repository.com/ldap.gpg.key
+# ldap_apt_key_download_dest: /etc/apt/keyrings/ldap.gpg.key
+# ldap_apt_key_dest: /etc/apt/keyrings/ldap.gpg
+
+# ldap_repo: owner_name/repo_name
+
+ldap_home: /opt/ldap
+ldap_user: ldap
+ldap_group: ldap

@@ -1,0 +1,17 @@
+# code: language=ansible
+---
+- name: Create/update systemd unit file
+  ansible.builtin.template:
+    src: ldap.service.j2
+    dest: /lib/systemd/system/ldap.service
+    mode: "0644"
+  notify: restart ldap
+- name: Service ldap is active and enabled on system startup
+  ansible.builtin.systemd_service:
+    name: ldap
+    state: started
+    enabled: true
+# - name: allow ldap port
+#   community.general.ufw:
+#     rule: allow
+#     port: "123456"

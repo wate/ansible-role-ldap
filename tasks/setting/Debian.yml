@@ -1,0 +1,16 @@
+# code: language=ansible
+---
+# - name: Create/update setting file
+#   ansible.builtin.template:
+#     src: ldap.conf.j2
+#     dest: /erc/ldap/ldap.conf
+#     mode: "0644"
+# - name: Add/update option setting
+#   ansible.builtin.lineinfile:
+#     path: /etc/ldap/ldap.conf
+#     regexp: ^(#\\s+)?option_name=
+#     line: option_name=option_value
+# - name: Add/update custom setting
+#   ansible.builtin.blockinfile:
+#     path: /etc/ldap/ldap.conf
+#     block: "{{ ldap_extra_cfg | default('') }}"
