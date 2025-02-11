@@ -29,4 +29,3 @@
 #     filename: ldap
 #     repo: deb [signed-by={{ ldap_apt_key_dest }}] https://packages.repository.com/debian {{ ansible_facts.distribution_release }} main
 #     state: present
-    
