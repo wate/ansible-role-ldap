@@ -3,6 +3,8 @@
 - name: Install repository dependency packages
   ansible.builtin.apt:
     name:
+      - python3-apt
+      - python3-debian
       - apt-transport-https
       - ca-certificates
       - curl
@@ -27,3 +29,4 @@
 #     filename: ldap
 #     repo: deb [signed-by={{ ldap_apt_key_dest }}] https://packages.repository.com/debian {{ ansible_facts.distribution_release }} main
 #     state: present
+    
