@@ -1,7 +1,7 @@
 ldap
 =================
 
-your description
+Setup LDAP
 
 OS Platform
 -----------------
